@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\V1\ContactController;
 /*use Illuminate\http\Controllers\ContactController;*/
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 /*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });*/
-Route::get('contacts',[App\Http\Controllers\ContactController::class,'getContacts']);
-Route::post('contacts',[App\Http\Controllers\ContactController::class,'saveContact']);
-Route::get('get_contact/{id}',[App\Http\Controllers\ContactController::class,'getContact']);
-Route::get('getcontact/{id}',[App\Http\Controllers\ContactController::class,'get_contact']);
-Route::delete('contacts/{id}',[App\Http\Controllers\ContactController::class,'deleteContact']);
-Route::patch('contacts/{id}',[App\Http\Controllers\ContactController::class,'UpdateContact']);
+
+Route::prefix('v1')->group(function() {
+    Route::apiResource('contacts', ContactController::class);
+});

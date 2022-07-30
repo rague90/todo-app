@@ -41,7 +41,7 @@ class ContactController extends Controller
         $contact = new Contact();
         $contact->name = $request->name;
         $contact->email = $request->email;
-       $contact->Tel = $request->Tel;
+        $contact->Tel = $request->Tel;
         $contact->fonction = $request->fonction;
         $contact->save();
         return response()->json([
