@@ -11,9 +11,7 @@ class ContactController extends Controller
    public function getContacts()
    {
    //      $contacts = Contact::get();
-         return response()->json( Contact::get()
-         
-        );
+         return response()->json(Contact::all());
 
    }
    //get and edit contact
@@ -43,7 +41,7 @@ class ContactController extends Controller
         $contact = new Contact();
         $contact->name = $request->name;
         $contact->email = $request->email;
-       $contact->Tel = $request->Tel;
+        $contact->Tel = $request->Tel;
         $contact->fonction = $request->fonction;
         $contact->save();
         return response()->json([
