@@ -1,24 +1,15 @@
 <template>
-  <div>
-  <Home/>
-
-    </div> 
+    <HomePage />
 </template>
 
 <script>
-
-import Home from './components/HoMe.vue'
+import HomePage from "./components/HomePage.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-     Home,
-    
+    HomePage,
   }
-}
+};
 </script>
 
-<style>
-
-
-</style>

@@ -11,9 +11,7 @@ class ContactController extends Controller
    public function getContacts()
    {
    //      $contacts = Contact::get();
-         return response()->json( Contact::get()
-         
-        );
+         return response()->json(Contact::all());
 
    }
    //get and edit contact

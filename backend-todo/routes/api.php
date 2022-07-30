@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
     return $request->user();
 });*/
 Route::get('contacts',[App\Http\Controllers\ContactController::class,'getContacts']);
-Route::post('save_contact',[App\Http\Controllers\ContactController::class,'saveContact']);
+Route::post('contacts',[App\Http\Controllers\ContactController::class,'saveContact']);
 Route::get('get_contact/{id}',[App\Http\Controllers\ContactController::class,'getContact']);
 Route::get('getcontact/{id}',[App\Http\Controllers\ContactController::class,'get_contact']);
-Route::delete('delete_Contact/{id}',[App\Http\Controllers\ContactController::class,'deleteContact']);
-Route::post('update_contact/{id}',[App\Http\Controllers\ContactController::class,'UpdateContact']);
+Route::delete('contacts/{id}',[App\Http\Controllers\ContactController::class,'deleteContact']);
+Route::patch('contacts/{id}',[App\Http\Controllers\ContactController::class,'UpdateContact']);
